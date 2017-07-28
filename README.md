@@ -1,8 +1,8 @@
 ## Welcome to BiXiaoyu's Pages
 
-### Markdown
+1.蓝灯最新版下载地址 [点击访问](https://github.com/getlantern/forum/issues/833).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+2.github搭建个人页面参考 [点击访问](http://www.cnblogs.com/lijiayi/p/githubpages.html).
 
 ```markdown
 Syntax highlighted code block
