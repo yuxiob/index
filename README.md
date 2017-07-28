@@ -6,6 +6,8 @@
 
 3.[掘金 - 高质量的技术社区](http://juejin.im).
 
+[Image](http://pic.3h3.com/up/2016-8/20168819191636397185.jpg)
+
 ```markdown
 Syntax highlighted code block
 
