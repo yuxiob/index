@@ -4,7 +4,9 @@
 
 2.[github搭建个人页面参考](http://www.cnblogs.com/lijiayi/p/githubpages.html).
 
-3.[掘金 - 高质量的技术社区](http://juejin.im).
+3.[github pages官方说明](https://pages.github.com/).
+
+4.[掘金 - 高质量的技术社区](http://juejin.im).
 
 ![Image](http://pic.3h3.com/up/2016-8/20168819191636397185.jpg)
 
