@@ -1,8 +1,10 @@
 ## Welcome to BiXiaoyu's Pages
 
-1.蓝灯最新版下载地址 [点击访问](https://github.com/getlantern/forum/issues/833).
+1.[蓝灯最新版下载地址](https://github.com/getlantern/forum/issues/833).
 
-2.github搭建个人页面参考 [点击访问](http://www.cnblogs.com/lijiayi/p/githubpages.html).
+2.[github搭建个人页面参考](http://www.cnblogs.com/lijiayi/p/githubpages.html).
+
+3.[掘金 - 高质量的技术社区](http://juejin.im).
 
 ```markdown
 Syntax highlighted code block
