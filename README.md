@@ -1,10 +1,10 @@
 ## Welcome to BiXiaoyu's Pages
 
-1.[蓝灯最新版下载地址](https://github.com/getlantern/forum/issues/833).
+1. [蓝灯最新版下载地址](https://github.com/getlantern/forum/issues/833).
 
-2.[github搭建个人页面参考](http://www.cnblogs.com/lijiayi/p/githubpages.html).
+2. [github搭建个人页面参考](http://www.cnblogs.com/lijiayi/p/githubpages.html).
 
-3.[github pages官方说明](https://pages.github.com/).
+3. [github pages官方说明](https://pages.github.com/).
 
 ![Image](http://pic.3h3.com/up/2016-8/20168819191636397185.jpg)
 
