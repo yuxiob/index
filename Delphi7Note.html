@@ -123,6 +123,29 @@
       原址：<a href="https://www.cnblogs.com/dabiao/archive/2010/07/30/1789033.html">https://www.cnblogs.com/dabiao/archive/2010/07/30/1789033.html</a>
   	    </pre></code>
   	</div>
+  	<div>
+  		<a>5.mdb数据库取消登录提示</a>
+  		<code>
+  			<pre>
+  	AdoConnection1.loginprompt:= False;
+  		    </pre>
+  		</code>
+  	</div>
+  	<div>
+  		<a>6.StringGrid键盘快捷键</a>
+  		<code>
+  			<pre>
+  	StringGrid1.keyDown()
+  	begin
+  	  if ssCtrl in shift then
+  	    Case key of 
+  	      Ord('C'): SdtringGridCopytoClipboard(TSringGrid(Sender));
+  	      Ord('V'): SdtringGridPasteFromClipboard(TSringGrid(Sender));
+  	    end;
+  	end;
+  		    </pre>
+  		</code>
+  	</div>
   </div>
 </body>
 </html>
