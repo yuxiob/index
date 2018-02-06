@@ -127,7 +127,7 @@
   		<a>5.mdb数据库取消登录提示</a>
   		<code>
   			<pre>
-  	AdoConnection1.loginprompt:= False;
+AdoConnection1.loginprompt:= False;
   		    </pre>
   		</code>
   	</div>
@@ -135,14 +135,28 @@
   		<a>6.StringGrid键盘快捷键</a>
   		<code>
   			<pre>
-  	StringGrid1.keyDown()
-  	begin
-  	  if ssCtrl in shift then
-  	    Case key of 
-  	      Ord('C'): SdtringGridCopytoClipboard(TSringGrid(Sender));
-  	      Ord('V'): SdtringGridPasteFromClipboard(TSringGrid(Sender));
-  	    end;
+StringGrid1.keyDown()
+begin
+  if ssCtrl in shift then
+  	Case key of 
+  	  Ord('C'): SdtringGridCopytoClipboard(TSringGrid(Sender));
+  	  Ord('V'): SdtringGridPasteFromClipboard(TSringGrid(Sender));
   	end;
+end;
+  		    </pre>
+  		</code>
+  	</div>
+  	<div>
+  		<a>6.动态数组</a>
+  		<code>
+  			<pre>
+var
+  A: array of string;
+  B: array of array of string;
+begin
+  setlength(A, 10);
+  setlength(B, 10, 10);
+end;
   		    </pre>
   		</code>
   	</div>
