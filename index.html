@@ -10,118 +10,117 @@
   <div>
   	<div><a>1.数据流操作</a></div>
   	<div><code><pre>
-  		function TfrmSchMain.WriteFile(fFileName: string; fData: DataType): Boolean;
-        var
-          TmpMem: TFileStream;
-        begin
-          Result := True;
-          if FileExists(fFileName) then    		         // fFileName := ApplicationPath + DirectName + FileName
-            DeleteFile(pchar(fFileName));
-          TmpMem := TFileStream.Create(fFileName, fmOpenReadWrite or fmCreate);
-          try               
-            try
-              TmpMem.Position := 0;
-              TmpMem.Write(fData, sizeof(fData));       //fData自定义类型
-            except
-              Result := False;
-            end;
-          finally
-            TmpMem.Free;
+    function TfrmSchMain.WriteFile(fFileName: string; fData: DataType): Boolean;
+    var
+      TmpMem: TFileStream;
+    begin
+      Result := True;
+      if FileExists(fFileName) then    		         // fFileName := ApplicationPath + DirectName + FileName
+        DeleteFile(pchar(fFileName));
+      TmpMem := TFileStream.Create(fFileName, fmOpenReadWrite or fmCreate);
+      try               
+        try
+          TmpMem.Position := 0;
+          TmpMem.Write(fData, sizeof(fData));       //fData自定义类型
+        except
+          Result := False;
           end;
-        end;
+      finally
+        TmpMem.Free;
+      end;
+    end;
 
-        function TfrmSchMain.ReadFile(fFileName: string; fData: DataType): Boolean;
-        var
-          TmpMem: TFileStream;
-        begin
-          Result := True;
-          if FileExists(fFileName) then    		         // fFileName := ApplicationPath + DirectName + FileName
-          begin
-            TmpMem := TFileStream.Create(fFileName, fmOpenRead);
-            try             
-              try
-                TmpMem.Position := 0;
-                TmpMem.Read(fData, sizeof(fData));      //fData自定义类型
-              except
-                Result := False;
-              end;
-            finally
-              TmpMem.Free;
+    function TfrmSchMain.ReadFile(fFileName: string; fData: DataType): Boolean;
+    var
+      TmpMem: TFileStream;
+    begin
+      Result := True;
+      if FileExists(fFileName) then    		         // fFileName := ApplicationPath + DirectName + FileName
+      begin
+        TmpMem := TFileStream.Create(fFileName, fmOpenRead);
+        try             
+          try
+            TmpMem.Position := 0;
+            TmpMem.Read(fData, sizeof(fData));      //fData自定义类型
+          except
+            Result := False;
           end;
-        end;
+        finally
+          TmpMem.Free;
+      end;
+    end;
   	</pre></code></div>
   	<div><a>2.聚焦组件</a></div>
   	<div>
   		<code><pre>
-  		  	edit1.setfocus;
+    edit1.setfocus;
   	    </pre></code>
   	</div>
   	<div><a>3.sql模糊查询</a></div>
   	<div>
   		<code><pre>
-  			where item like %a%                          //%代表多个 _代表一个
+  	where item like %a%                          //%代表多个 _代表一个
   	    </pre></code>
   	</div>
   	<div><a>4.导出为Excel文件</a></div>
   	<div>
   		<code><pre>
-  			(1)
-  			procedure TfrmErrorInfo.pmiDataToExcelClick(Sender: TObject);
-  			var
-  			  DBAdvGrid1: TDBAdvGrid;
-            begin
-              SaveDialog1.Title := '导出数据';
-              SaveDialog1.FileName := '';
-              SaveDialog1.DefaultExt := 'xls';
-              SaveDialog1.Filter := 'Excel File';
-              if SaveDialog1.Execute then
-                DBAdvGrid1.SaveToXLS(SaveDialog1.FileName, True);
-            end;
-            (2)
-            tmpStrlist:TStringList;
-            tmpStrlist.Add(tmpRowCells);
-            tmpStrlist.SaveToFile(tmpFileName);
-            (3)转载
-            procedure TFormMain.btn3Click(Sender: TObject);
-            var
-              ExcelApp,workbook,sheet:Variant;
-            begin
-              dlgSavedlg1.Filter := 'Excel2007格式文件|*.xlsx|Excel2003格式文件|*.xls';
-              ExcelApp:=UnAssigned();
-              ExcelApp := CreateOleObject('Excel.application'); (* 创建一个Excel的OLE对象，使用OLE去创建Excel文件时,需要uses ComObj *)
-              workbook := ExcelApp.WorkBooks.Add;               (* 创建一个WorkBook *)
-              Sheet := ExcelApp.Sheets[1];                      (* 创建一个Sheet变量 *)
-              for i := 0 to 21 do                               
-                begin
-                  Sheet.cells[i+1,1].value := strngrd1.Cells[1,i];  (* 将Delphi的Stringgrid中的内容保存到Excel的Sheet中去 *)
-                  Sheet.cells[i+1,2].value := strngrd1.Cells[2,i];
-                  Sheet.cells[i+1,3].value := strngrd1.Cells[3,i];
-                end;
+  	(1)
+  	procedure TfrmErrorInfo.pmiDataToExcelClick(Sender: TObject);
+  	var
+  	  DBAdvGrid1: TDBAdvGrid;
+    begin
+      SaveDialog1.Title := '导出数据';
+      SaveDialog1.FileName := '';
+      SaveDialog1.DefaultExt := 'xls';
+      SaveDialog1.Filter := 'Excel File';
+      if SaveDialog1.Execute then
+        DBAdvGrid1.SaveToXLS(SaveDialog1.FileName, True);
+    end;
+    (2)
+    tmpStrlist:TStringList;
+    tmpStrlist.Add(tmpRowCells);
+    tmpStrlist.SaveToFile(tmpFileName);
+    (3)转载
+    procedure TFormMain.btn3Click(Sender: TObject);
+    var
+      ExcelApp,workbook,sheet:Variant;
+    begin
+      dlgSavedlg1.Filter := 'Excel2007格式文件|*.xlsx|Excel2003格式文件|*.xls';
+      ExcelApp:=UnAssigned();
+      ExcelApp := CreateOleObject('Excel.application'); (* 创建一个Excel的OLE对象，使用OLE去创建Excel文件时,需要uses ComObj *)
+      workbook := ExcelApp.WorkBooks.Add;               (* 创建一个WorkBook *)
+      Sheet := ExcelApp.Sheets[1];                      (* 创建一个Sheet变量 *)
+      for i := 0 to 21 do                               
+        begin
+          Sheet.cells[i+1,1].value := strngrd1.Cells[1,i];  (* 将Delphi的Stringgrid中的内容保存到Excel的Sheet中去 *)
+          Sheet.cells[i+1,2].value := strngrd1.Cells[2,i];
+          Sheet.cells[i+1,3].value := strngrd1.Cells[3,i];
+        end;
   
-                (*ExcelApp.Visible := True;*)   (* 将这句话取消注释,就会弹出Excel *)        
+        (*ExcelApp.Visible := True;*)   (* 将这句话取消注释,就会弹出Excel *)        
 
 
-               (*ExcelApp.ActiveSheet.Rows[2].RowHeight := 1/0.035;*)  (* 这就话可以设置行高 *)
-               ExcelApp.ActiveSheet.Columns[1].Columnwidth  := 20;   (* 设置列宽,网上的很多资料都把Columnwidth 写成了 ColumnsWidth,多写了一个s,误导了很多人 *)
-               ExcelApp.ActiveSheet.Columns[2].Columnwidth  := 20;
-               ExcelApp.ActiveSheet.Columns[3].Columnwidth  := 20;
+       (*ExcelApp.ActiveSheet.Rows[2].RowHeight := 1/0.035;*)  (* 这就话可以设置行高 *)
+       ExcelApp.ActiveSheet.Columns[1].Columnwidth  := 20;   (* 设置列宽,网上的很多资料都把Columnwidth 写成了 ColumnsWidth,多写了一个s,误导了很多人 *)
+       ExcelApp.ActiveSheet.Columns[2].Columnwidth  := 20;
+       ExcelApp.ActiveSheet.Columns[3].Columnwidth  := 20;
             
-              if dlgSavedlg1.Execute then    (* 如果点击了保存对话框的"保存"按键的话，将当前活动的Workbook保存到SaveDialog指定的位置 *)
-                begin
-                  ExcelApp.ActiveWorkbook.saveas(dlgSavedlg1.FileName);
-                end
-              else                           (* 如果点击了保存对话框的"取消"按键的话,放弃存盘,这句话一定要加上，否则,在点击"取消"按键时,会出现问题 *)
-                ExcelApp.ActiveWorkBook.Saved := True;
+       if dlgSavedlg1.Execute then    (* 如果点击了保存对话框的"保存"按键的话，将当前活动的Workbook保存到SaveDialog指定的位置 *)
+       begin
+         ExcelApp.ActiveWorkbook.saveas(dlgSavedlg1.FileName);
+       end
+       else                           (* 如果点击了保存对话框的"取消"按键的话,放弃存盘,这句话一定要加上，否则,在点击"取消"按键时,会出现问题 *)
+         ExcelApp.ActiveWorkBook.Saved := True;
 
-              workbook.Close;  (* 最后,将WorkSheet关闭 *)
-              ExcelApp.quit;   (* 退出ExcelApp *)
-              ExcelApp := unassigned; (* 使用unassigned时，要uses Variants *)
-            end;
+         workbook.Close;  (* 最后,将WorkSheet关闭 *)
+         ExcelApp.quit;   (* 退出ExcelApp *)
+         ExcelApp := unassigned; (* 使用unassigned时，要uses Variants *)
+       end;
 
-            (* 由于使用创建OLE对象的方法去创建Excel时，是使用的您电脑上安装的Excel，因此，生成的文件的格式和您电脑上安装的Excel的版本有关系。
-               比如:我的电脑上安装的是office2010，如果将Excel文件保存为xls格式，在打开时就会出错。
-             *)
-            原址：https://www.cnblogs.com/dabiao/archive/2010/07/30/1789033.html
+      (* 由于使用创建OLE对象的方法去创建Excel时，是使用的您电脑上安装的Excel，因此，生成的文件的格式和您电脑上安装的Excel的版本有关系。
+         比如:我的电脑上安装的是office2010，如果将Excel文件保存为xls格式，在打开时就会出错。*)
+      原址：https://www.cnblogs.com/dabiao/archive/2010/07/30/1789033.html
   	    </pre></code>
   	</div>
   </div>
