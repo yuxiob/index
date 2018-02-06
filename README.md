@@ -6,6 +6,8 @@
 
 3. [github pages官方说明](https://pages.github.com/).
 
+4. [Delphi7笔记](https://github.com/yuxiob/Delphi7Note.html/).
+
 ![Image](http://pic.3h3.com/up/2016-8/20168819191636397185.jpg)
 
 ### Create by yuxiob.
