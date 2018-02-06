@@ -10,44 +10,44 @@
   <div>
   	<div><a>文件流操作数据</a></div>
   	<div><code>
-  		function TfrmSchMain.WriteFile(fFileName: string; fData: DataType): Boolean;
-        var
-          TmpMem: TFileStream;
-        begin
-          Result := True;
-          if FileExists(fFileName) then    		         // fFileName := ApplicationPath + DirectName + FileName
+  		function TfrmSchMain.WriteFile(fFileName: string; fData: DataType): Boolean;<br>
+        var<br>
+          TmpMem: TFileStream;<br>
+        begin<br>
+          Result := True;<br>
+          if FileExists(fFileName) then    		         // fFileName := ApplicationPath + DirectName + FileName<br>
             DeleteFile(pchar(fFileName));
-          TmpMem := TFileStream.Create(fFileName, fmOpenReadWrite or fmCreate);
-          try                    
-            try
-              TmpMem.Position := 0;
-              TmpMem.Write(fData, sizeof(fData));       //fData自定义类型
-            except
-              Result := False;
-            end;
-          finally
-            TmpMem.Free;
-          end;
-        end;
+          TmpMem := TFileStream.Create(fFileName, fmOpenReadWrite or fmCreate);<br>
+          try<br>                    
+            try<br>
+              TmpMem.Position := 0;<br>
+              TmpMem.Write(fData, sizeof(fData));       //fData自定义类型<br>
+            except<br>
+              Result := False;<br>
+            end;<br>
+          finally<br>
+            TmpMem.Free;<br>
+          end;<br>
+        end;<br>
 
-        function TfrmSchMain.ReadFile(fFileName: string; fData: DataType): Boolean;
-        var
-          TmpMem: TFileStream;
-        begin
-          Result := True;
-          if FileExists(fFileName) then    		         // fFileName := ApplicationPath + DirectName + FileName
-          begin
-            TmpMem := TFileStream.Create(fFileName, fmOpenRead);
-            try                    
-              try
-                TmpMem.Position := 0;
-                TmpMem.Read(fData, sizeof(fData));      //fData自定义类型
-              except
-                Result := False;
-              end;
-            finally
-              TmpMem.Free;
-          end;
+        function TfrmSchMain.ReadFile(fFileName: string; fData: DataType): Boolean;<br>
+        var<br>
+          TmpMem: TFileStream;<br>
+        begin<br>
+          Result := True;<br>
+          if FileExists(fFileName) then    		         // fFileName := ApplicationPath + DirectName + FileName<br>
+          begin<br>
+            TmpMem := TFileStream.Create(fFileName, fmOpenRead);<br>
+            try<br>                    
+              try<br>
+                TmpMem.Position := 0;<br>
+                TmpMem.Read(fData, sizeof(fData));      //fData自定义类型<br>
+              except<br>
+                Result := False;<br>
+              end;<br>
+            finally<br>
+              TmpMem.Free;<br>
+          end;<br>
         end;
   	</code></div>
   </div>
