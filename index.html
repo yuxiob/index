@@ -59,16 +59,16 @@
   	<div><a>3.sql模糊查询</a></div>
   	<div>
   		<code><pre>
-  	where item like %a%                          //%代表多个 _代表一个
+    where item like %a%                          //%代表多个 _代表一个
   	    </pre></code>
   	</div>
   	<div><a>4.导出为Excel文件</a></div>
   	<div>
   		<code><pre>
-  	(1)
-  	procedure TfrmErrorInfo.pmiDataToExcelClick(Sender: TObject);
-  	var
-  	  DBAdvGrid1: TDBAdvGrid;
+    (1)
+    procedure TfrmErrorInfo.pmiDataToExcelClick(Sender: TObject);
+    var
+    DBAdvGrid1: TDBAdvGrid;
     begin
       SaveDialog1.Title := '导出数据';
       SaveDialog1.FileName := '';
@@ -120,7 +120,7 @@
 
       (* 由于使用创建OLE对象的方法去创建Excel时，是使用的您电脑上安装的Excel，因此，生成的文件的格式和您电脑上安装的Excel的版本有关系。
          比如:我的电脑上安装的是office2010，如果将Excel文件保存为xls格式，在打开时就会出错。*)
-      原址：https://www.cnblogs.com/dabiao/archive/2010/07/30/1789033.html
+      原址：<a href="https://www.cnblogs.com/dabiao/archive/2010/07/30/1789033.html">https://www.cnblogs.com/dabiao/archive/2010/07/30/1789033.html</a>
   	    </pre></code>
   	</div>
   </div>
