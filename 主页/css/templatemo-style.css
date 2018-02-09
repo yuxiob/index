@@ -104,12 +104,12 @@ ul {
   left: 0;
   text-decoration: none;
   font-size: 24px;
-  background: #fa5252;
+  background: #3e4e62;
   -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .nav__link:hover {
-  background: #3e4e62;
+  background: #fa5252;
 }
 .copyrights{
 	text-indent:-9999px;
