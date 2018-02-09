@@ -10,6 +10,8 @@
 
 5. [站点](/主页/index.html/).
 
+6. [横幅](/横幅/index.html/).
+
 ![Image](http://pic.3h3.com/up/2016-8/20168819191636397185.jpg)
 
 ### Create by yuxiob.
